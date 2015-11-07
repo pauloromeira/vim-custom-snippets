@@ -1,0 +1,15 @@
+global !p
+from vimsnippets import get_comment_format
+from datetime import datetime
+endglobal
+
+snippet todo "TO DO"
+`!p
+cm = get_comment_format()
+snip.rv = cm[0].strip()
+snip.rv += ' TODO (romeira):'` $0 `!p
+snip.rv += datetime.now().strftime("{%d/%m/%y %H:%M}")
+if cm[2].strip() != '' and cm[0] != cm[2]:
+    snip.rv += ' ' + cm[2].strip()
+`
+endsnippet
