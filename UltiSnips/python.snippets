@@ -6,3 +6,7 @@ endsnippet
 snippet ipdb "Breakpoint" b
 import ipdb; ipdb.set_trace()
 endsnippet
+
+snippet pprint "Pretty Print" b
+from pprint import pprint; pprint(${1:${VISUAL:object}})
+endsnippet
