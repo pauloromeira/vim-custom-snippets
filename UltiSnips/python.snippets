@@ -3,10 +3,22 @@ class ${1:MyClass}($2):
 	$0
 endsnippet
 
-snippet ipdb "Breakpoint" b
+snippet pdb "Breakpoint" b
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet ipdb "IPython Breakpoint" b
 import ipdb; ipdb.set_trace()
 endsnippet
 
 snippet pprint "Pretty Print" b
 from pprint import pprint; pprint(${1:${VISUAL:object}})
+endsnippet
+
+snippet insp "Scrapy Shell Inspect" b
+import scrapy.shell; scrapy.shell.inspect_response(response, spider)
+endsnippet
+
+snippet #! "pyenv shebang" b
+#!/usr/bin/env python
 endsnippet
