@@ -2,3 +2,19 @@ snippet class "Class" b
 class ${1:MyClass}($2):
 	$0
 endsnippet
+
+snippet pdb "break point" b
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet ipdb "ipython break point" b
+import ipdb; ipdb.set_trace()
+endsnippet
+
+snippet insp "scrapy shell inspect" b
+import scrapy.shell; scrapy.shell.inspect_response(response, spider)
+endsnippet
+
+snippet #! "pyenv shebang" b
+#!/usr/bin/env python
+endsnippet
