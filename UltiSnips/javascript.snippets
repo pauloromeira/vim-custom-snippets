@@ -15,3 +15,18 @@ else if (${1:true}) {
 	${2:${VISUAL}}
 }
 endsnippet
+
+
+snippet foro "For each value of iterable" b
+for (var ${1:value} of ${2:iterable}) {
+	$3
+}
+$0
+endsnippet
+
+snippet fori "For each property name in object" b
+for (var ${1:property} in ${2:object}) {
+	$3
+}
+$0
+endsnippet
