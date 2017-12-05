@@ -19,11 +19,15 @@ snippet insp "Scrapy Shell Inspect" b
 import scrapy.shell; scrapy.shell.inspect_response(response, spider)
 endsnippet
 
-snippet #! "pyenv shebang" b
+snippet #! "Pyenv shebang" b
 #!/usr/bin/env python
 endsnippet
 
 snippet init "__init__" b
 def __init__(self${1}):
 	${2:${VISUAL:pass}}
+endsnippet
+
+snippet super "Super init"
+super(${1:Child}, self).__init__($2)
 endsnippet
