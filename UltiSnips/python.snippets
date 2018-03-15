@@ -1,3 +1,7 @@
+global !p
+from datetime import datetime
+endglobal
+
 snippet class "Class" b
 class ${1:MyClass}($2):
 	$0
@@ -28,6 +32,14 @@ def __init__(self${1}):
 	${2:${VISUAL:pass}}
 endsnippet
 
-snippet super "Super init"
+snippet super "Super init" b
 super(${1:Child}, self).__init__($2)
+endsnippet
+
+snippet impl "Implement" b
+`!p
+snip.rv = '# TODO [romeira]:'` ${1:${VISUAL:implement}} `!p
+snip.rv += datetime.now().strftime("{%d/%m/%y %H:%M}")
+`
+raise NotImplementedError$0
 endsnippet
