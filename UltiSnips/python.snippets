@@ -11,8 +11,12 @@ snippet pdb "Breakpoint" b
 import pdb; pdb.set_trace()
 endsnippet
 
-snippet ipdb "IPython Breakpoint" b
+snippet ipdb "IPdb Breakpoint" b
 import ipdb; ipdb.set_trace()
+endsnippet
+
+snippet embed "IPython Embed" b
+import IPython; IPython.embed()
 endsnippet
 
 snippet pprint "Pretty Print" b
@@ -27,13 +31,17 @@ snippet #! "Pyenv shebang" b
 #!/usr/bin/env python
 endsnippet
 
-snippet init "__init__" b
-def __init__(self${1}):
-	${2:${VISUAL:pass}}
+snippet init "Constructor" b
+def __init__(self$1):
+	${0:${VISUAL:pass}}
 endsnippet
 
 snippet super "Super init" b
 super(${1:Child}, self).__init__($2)
+endsnippet
+
+snippet exit "Exit Script" b
+import sys; sys.exit()
 endsnippet
 
 snippet impl "Implement" b
