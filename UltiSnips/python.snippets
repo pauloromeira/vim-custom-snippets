@@ -19,7 +19,7 @@ snippet ipy "IPython Embed" b
 import IPython; IPython.embed()
 endsnippet
 
-snippet pprint "Pretty Print" b
+snippet pp "Pretty Print" b
 from pprint import pprint; pprint(${1:${VISUAL:object}})
 endsnippet
 
@@ -36,8 +36,8 @@ def __init__(self$1):
 	${0:${VISUAL:pass}}
 endsnippet
 
-snippet super "Super init" b
-super(${1:Child}, self).__init__($2)
+snippet super "Call super" b
+super(${1:Child}, self).${2:__init__}($3)
 endsnippet
 
 snippet exit "Exit Script" b
