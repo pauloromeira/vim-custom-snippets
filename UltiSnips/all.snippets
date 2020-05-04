@@ -1,6 +1,6 @@
 global !p
-from vimsnippets import get_comment_format
 from datetime import datetime
+from vimsnippets import get_comment_format
 endglobal
 
 snippet todo "TO DO" w
@@ -22,4 +22,29 @@ endsnippet
 
 snippet ( "Parenthesis"
 $1(${2:${VISUAL}})
+endsnippet
+
+snippet dsh "A dashed separator" b
+`!p
+if not snip.c:
+    col = int(vim.eval("virtcol('.')")) - 1
+
+total_len = 71 - len(t[1]) - col
+cm = get_comment_format()
+side_len = total_len // 2 - 2
+
+cm_before = cm[0].strip()
+len_before = side_len - len(cm_before)
+sep_before = ' ' if len_before >= 0 else ''
+before = '{} {}{}'.format(cm_before, len_before * '-', sep_before)
+
+cm_after = cm[2].strip()
+len_after = side_len - len(cm_after) + total_len % 2
+sep_after = ' ' if len_after >= 0 else ''
+after = '{}{} {}'.format(sep_after,  len_after * '-', cm_after)
+
+snip.rv = before
+`${1:${VISUAL:}}`!p
+snip.rv = after
+`
 endsnippet
