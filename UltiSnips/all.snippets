@@ -24,12 +24,14 @@ snippet ( "Parenthesis"
 $1(${2:${VISUAL}})
 endsnippet
 
-snippet dsh "A dashed separator" b
+snippet "dsh([0-9]*(\.[0-9]+)?)?" "A dashed separator" br
 `!p
 if not snip.c:
     col = int(vim.eval("virtcol('.')")) - 1
 
-total_len = 71 - len(t[1]) - col
+base = int(71 * (float(match.group(1)) if match.group(1) else 1))
+
+total_len = base - len(t[1]) - col
 cm = get_comment_format()
 side_len = total_len // 2 - 2
 
